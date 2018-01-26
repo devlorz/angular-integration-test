@@ -1,20 +1,36 @@
+import { Observable } from 'rxjs';
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { UserDetailsComponent } from './user-details.component';
 
-xdescribe('UserDetailsComponent', () => {
+class RouterStub {
+  navigate(params) {
+  }
+}
+
+class ActivatedRouteStub {
+  params: Observable<any> = Observable.empty();
+}
+
+describe('UserDetailsComponent', () => {
   let component: UserDetailsComponent;
   let fixture: ComponentFixture<UserDetailsComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ UserDetailsComponent ]
+  beforeEach(
+    async(() => {
+      TestBed.configureTestingModule({
+        declarations: [UserDetailsComponent],
+        providers: [
+          { provide: Router, useClass: RouterStub }
+          { provide: ActivatedRoute, useClass: ActivatedRouteStub }
+        ]
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(UserDetailsComponent);
