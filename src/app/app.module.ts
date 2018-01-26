@@ -1,16 +1,17 @@
-import { UsersComponent } from './../users/users.component';
-import { UserDetailsComponent } from './../3-user-details/user-details.component';
-import { TodosComponent } from './../2-todos/todos.component';
-import { HomeComponent } from './../home/home.component';
+import { UsersComponent } from './users/users.component';
+import { UserDetailsComponent } from './3-user-details/user-details.component';
+import { TodosComponent } from './2-todos/todos.component';
+import { HomeComponent } from './home/home.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { VoterComponent } from '../1-voter/voter.component';
+import { VoterComponent } from './1-voter/voter.component';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.route';
+import { GreeterComponent } from './greeter/greeter.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { routes } from './app.route';
     TodosComponent,
     UserDetailsComponent,
     VoterComponent,
-    UsersComponent
+    UsersComponent,
+    GreeterComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
