@@ -12,6 +12,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.route';
 import { GreeterComponent } from './greeter/greeter.component';
+import { NavComponent } from './nav/nav.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { GreeterComponent } from './greeter/greeter.component';
     UserDetailsComponent,
     VoterComponent,
     UsersComponent,
-    GreeterComponent
+    GreeterComponent,
+    NavComponent,
+    HighlightDirective
   ],
   imports: [
     RouterModule.forRoot(routes),
